@@ -1,4 +1,4 @@
-# Title
+# How to make an Oscar winning movie?
 
 # Abstract
 Nowadays, movies have become an integral part of entertainment in everyone’s life. Entertainment giants like Netflix and HBO are investing billions of dollars a year to produce high quality movies with the most popular actors and directors of the cinematographic industry for its audience. 
