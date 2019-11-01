@@ -1,4 +1,4 @@
-# How to make an Oscar winning movie?
+# What makes a movie successful?
 
 # Abstract
 Nowadays, movies have become an integral part of entertainment in everyone’s life. Entertainment giants like Netflix and HBO are investing billions of dollars a year to produce high quality movies with the most popular actors and directors of the cinematographic industry for its audience. 
@@ -9,7 +9,9 @@ The goal of the project is to analyze the factors that contribute to the success
 * What are the factors that contribute to make a movie an oscar-winning one? Is it the actors? Is it the director? Is it the genre? or is it something else?
 * What makes a movie a blockbuster? Are high budget movies always successful?
 * How has the interest of people towards movies changed through time?
-* What is the impact of this changes in interest on the success of certain types of movies?
+* What is the impact of these changes in interest on the success of certain types of movies?
+* What is the impact of gender on the success of a movie
+* How does the geographical reach of a movie impact its success
 
 
 # Dataset
