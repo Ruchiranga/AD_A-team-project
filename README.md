@@ -18,7 +18,7 @@ We intend to address the main research question "What are the factors that make 
 	* Golden Leopard
 	* Grand Jury Prize
 	* Golden Globe
-	* Golden Lion 			
+	* Golden Lion  
 From Oscars to Golden Lion awards, each will be assigned a weight from 1 to 0.5 with Oscards having weight as 1 and Golden Lion having weight as 0.5. For all the award ceramonies not included in the above list, we will give a weight of 0.1. For a win a weight of 1 will be used and for a nomination a weight of 0.5 will be used. Final score for an actor will be the weighted sum of each of his/her nominations or awards (The weights could be subjected to change). We will then aggregate the scores of the stars in each movie and see if the movies with a higher aggregate value have won more awards.
 * How does the geographical reach of a movie impact its success?
 * Does the month of release have an impact on a movie's succees?
