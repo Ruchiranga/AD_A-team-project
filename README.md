@@ -6,7 +6,7 @@ Nowadays, movies have become an integral part of entertainment in everyone’s l
 The goal of the project is to analyze the factors that contribute to the success of a movie through time. We intend to look into aspects including but not limited to the cast, the movie budget, writers and directors, time of first screening, genre and the IMDB rating of movies. The analysis can give us insights on the evolution of the interest of people towards movies with time. We will use datasets provided by IMDB and we will also use web scraping to obtain additional information required from imdb.com.
 
 # Research questions
-We intend to address the main research question "What are the factors that make a movie award winning?" Is it the actors? Is it the director? Is it the genre? or is it something else? During the analysis we plan to investigate the following
+We intend to address the main research question "What are the factors that make a movie award winning?". We analyzed or plan to analyze the following aspects.
 
 ## Actors
 
@@ -46,17 +46,66 @@ In addition we also have access to the features of the title.basics.tsv.gz :
 * runtimeMinutes
 * Genres
 
-## Additional question we
-* Has there been any time in the history that movies in a certain genre became more successful than movies in other genres?
+## Age of cast
 
+For each actor or actress in the name.basics.tsv.gz dataset, we can find their birthYear. This can be used to compute an aggregate such as mean for every movie considering the age of the cast by the time the movie was released. We can see if actors being young or old can impact whether a movie would win an award or not.
+
+## Number of IMDB voters
+
+The title.ratings.tsv.gz dataset contains the field numVotes that gives the number of votes made on each movie. This number can be an indicator of the popularity of a movie. This is only indicator of the popularity of a movie and is useful to analyze the impact a movies popluarity has on the number of awards it wins.
+
+## Metacritic score
+
+The metacritic score obtained from scraing the IMDB web page of movies can be used to see if a high metacritic score corelates with award winning movies.
+
+## Additional question
+* Has there been any time in the history that movies in a certain genre became more successful than movies in other genres?
+* How do metacritic scores and IMDB ratings correlate? We could take a closer look at the outliers.
+* What are the trending topics in a given period of time? we will use the plot keywords of the movies for the analysis.
 
 
 # Dataset
-We use the datasets provided by IMDB: [https://datasets.imdbws.com/](https://datasets.imdbws.com/).
+We use the datasets provided by IMDB: [https://datasets.imdbws.com/](https://datasets.imdbws.com/). Schemas and descriptions of the features of the datasets used are as follows.
 
-We will also scrape pages from [https://www.imdb.com/](https://www.imdb.com/) that refer to specific movies and actors to obtain information in addition to those available in the datasets.
+### Persons
 
-#### Description of the data
+name.basics.tsv
+ |_nconst : IMDB Id of the person
+ |_primaryName : Last name and first name
+ |_birthYear : For computing the age of actors/actresses
+ |_primaryProfession : list of professions
+
+### Movies
+
+title.basics.tsv.gz
+ |_tconst : IMDB Id of the movie
+ |_titleType : Used To filter only movies
+ |_primaryTitle : English title
+ |_originalTitle : Original title
+ |_isAdult : Useful to analyse whether a movie being adult can make a movie successful
+ |_startYear : gives time of first screening
+ |_runtimeMinutes : totla runtime of the movie
+ |_genres : genres the movie belongs to
+
+### Alternative Movie Names
+
+title.akas.tsv.gz
+ |_tconst : Id of the movie (not unique since a film can have more than one region)
+ |_ordering : A number to uniquely identify rows for a given titleId
+ |_region : Abbreviation of the name of the region the alternative name belongs to
+ |_language : Abbreviation of the name of the language
+
+### User Ratings
+
+title.ratings.tsv.gz
+ |_tconst : Id of the movie
+ |_averageRating : Weighted average of all the individual user ratings
+ |_numVotes : Number of votes the title has received (Can be used as an indicator of movie popularity)
+
+
+We also scrape pages from [https://www.imdb.com/](https://www.imdb.com/) that refer to specific movies and actors to obtain information in addition to those available in the datasets. Schemas and descriptions of the data that is scraped are as follows.
+
+### Movies
 
 * tconst: Unique imdb identifier of each movie, given as string
 * stars: Three main actors playing in the movie , given as list of strings, scraped 
@@ -70,10 +119,13 @@ We will also scrape pages from [https://www.imdb.com/](https://www.imdb.com/) th
 * worldwideGross: Wordlwide revenue, given as string, scrapped
 * metascore: Scores are assigned to movie's reviews of large group of the world's most respected critics, and weighted average are applied to summarize their opinions range, given as float, scraped
 * musicProducer: Producer of the music in the movie, string, scraped
-* primaryTitle: English title, string
-* originalTitle: Original title, string
-* startYear: Year of release, integer
-* runtimeMinutes: Runtime of the movie in minutes, string, scraped
-* genres: genres the movie can be attributed to, string
-* averageRating: Average rating of the movie given by imbd users, float
-* numVotes: Number of users that have scored the movie, float
+
+### Actor Awards and Nominations
+
+* nconst: Unique IMDB IDs of actors
+* year: Year of award or nominaion
+* category : Award ceramony
+* w_n : Winner or Nominee
+* description: Description of the award
+* movie: Name of the movie in which the actor played on
+* tconst: Unique IMDB Id of movie in which the actor played on
