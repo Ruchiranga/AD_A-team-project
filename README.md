@@ -77,15 +77,15 @@ name.basics.tsv
 
 ### Movies
 
-title.basics.tsv.gz
- |_tconst : IMDB Id of the movie
- |_titleType : Used To filter only movies
- |_primaryTitle : English title
- |_originalTitle : Original title
- |_isAdult : Useful to analyse whether a movie being adult can make a movie successful
- |_startYear : gives time of first screening
- |_runtimeMinutes : totla runtime of the movie
- |_genres : genres the movie belongs to
+* title.basics.tsv.gz  
+ |_tconst : IMDB Id of the movie  
+ |_titleType : Used To filter only movies  
+ |_primaryTitle : English title  
+ |_originalTitle : Original title  
+ |_isAdult : Useful to analyse whether a movie being adult can make a movie successful  
+ |_startYear : gives time of first screening  
+ |_runtimeMinutes : totla runtime of the movie  
+ |_genres : genres the movie belongs to 
 
 ### Alternative Movie Names
 
