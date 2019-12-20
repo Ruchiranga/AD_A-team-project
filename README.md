@@ -1,4 +1,15 @@
-Online nbviwer link for the notebook incase the animations don't run : https://nbviewer.jupyter.org/github/Ruchiranga/AD_A-team-project/blob/master/Milestone2.ipynb
+Link for the website : https://ruchiranga.github.io/
+
+Contribution of the members of the group (roughly) :
+
+Analysis of the features
+
+Laurent : Geographical reach, budget
+Ruchiranga : Gender, IsAdult
+Souhail : Director score, releaseDate
+Stanislas : Age, Runtime, Genres
+
+The scraping code was done by Ruchiranga
 
 # What makes a movie successful?
 
@@ -9,6 +20,26 @@ The goal of the project is to analyze the factors that contribute to the success
 
 ## Research Questions
 We intend to address the main research question "What are the factors that make a movie award winning?". We analyzed or plan to analyze the following aspects.
+
+## Success metrics
+
+### Recognition score
+
+Obtained by an aggregation of the number of oscars win, the number of awards win, and the number of nomination for an award.
+
+### Number of IMDB Voters
+
+The title.ratings.tsv.gz dataset contains the field numVotes that gives the number of votes made on each movie. This number can be an indicator of the popularity of a movie. This is only indicator of the popularity of a movie and is useful to analyze the impact a movies popluarity has on the number of awards it wins.
+
+### Revenue
+
+The revenue in US dollars
+
+### Metacritic Score
+
+The metacritic score obtained from scraing the IMDB web page of movies can be used to see if a high metacritic score corelates with award winning movies.
+
+## Features
 
 ### Actors
 
@@ -24,9 +55,6 @@ A score will be calculated for every actor depending on the awards they have won
 * Golden Globe
 * Golden Lion 
 
- 
-From Oscars to Golden Lion awards, each will be assigned a weight from 1 to 0.5 with Oscards having weight as 1 and Golden Lion having weight as 0.5. For all the award ceramonies not included in the above list, we will give a weight of 0.1. For a win a weight of 1 will be used and for a nomination a weight of 0.5 will be used. Final score for an actor will be the weighted sum of each of his/her nominations or awards (The weights could be subjected to change). We will then aggregate the scores of the stars in each movie and see if the movies with a higher aggregate value have won more awards.
-
 ### Geographical Reach
 
 With the help of the title.akas.tsv.gz dataset we can know an approximation of the geographical reach of a given movie by just computing the length of the list of alternative titles of that movie. 
@@ -35,7 +63,7 @@ With the help of the title.akas.tsv.gz dataset we can know an approximation of t
 
 We got the release dates of the movies from the scraping and we extracted the month from it. We can use it as a categorical variable.
 
-### High Budget
+### Budget
 
 This feature is going to be complicated to use, most of the film do not have a budget and when they do, it is not necessarily in US dollars. In order to convert different currencies to actual US dollars, we have to keep up with the inflation and with the old exchange rates which is really hard for movies released before the year 2000 as we were not able find any information about those on the internet.
 
@@ -43,27 +71,25 @@ This feature is going to be complicated to use, most of the film do not have a b
 
 Each person in the name.basics.tsv.gz dataset has a list of primaryProfession, some of them might be actor or actress, this allows us to know the gender of each actor or actress. For each movie we have an array of actors and we know the gender of each of them which will allow us to compute an approximate ratio of gender representation in the movie cast which can be used as a feature.
 
-In addition we also have access to the features of the title.basics.tsv.gz : 
-* isAdult 
-* runtimeMinutes
-* Genres
+### isAdult
+
+isAdult contains 18+ movies, we can if it influences the various metrics
+
+### runtimeMinutes
+
+The length of the movie can be a factor for its success.
+
+### Genres
+
+Each movie has a list of genres, there is 25 of them and they can be very useful.
 
 ### Age of Cast
 
-For each actor or actress in the name.basics.tsv.gz dataset, we can find their birthYear. This can be used to compute an aggregate such as mean for every movie considering the age of the cast by the time the movie was released. We can see if actors being young or old can impact whether a movie would win an award or not.
+For each actor or actress in the name.basics.tsv.gz dataset, we can find their birthYear. This can be used to compute the median for every movie considering the age of the cast by the time the movie was released. We can see if actors being young or old can impact whether a movie would win an award or not.
 
-### Number of IMDB Voters
+### Release Date
 
-The title.ratings.tsv.gz dataset contains the field numVotes that gives the number of votes made on each movie. This number can be an indicator of the popularity of a movie. This is only indicator of the popularity of a movie and is useful to analyze the impact a movies popluarity has on the number of awards it wins.
-
-### Metacritic Score
-
-The metacritic score obtained from scraing the IMDB web page of movies can be used to see if a high metacritic score corelates with award winning movies.
-
-## Additional Questions
-* Has there been any time in the history that movies in a certain genre became more successful than movies in other genres?
-* How do metacritic scores and IMDB ratings correlate? We could take a closer look at the outliers.
-* What are the trending topics in a given period of time? we will use the plot keywords of the movies for the analysis.
+The year and the month of the release date 
 
 
 ## Dataset
