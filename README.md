@@ -83,6 +83,10 @@ The length of the movie can be a factor for its success.
 
 Each movie has a list of genres, there is 25 of them and they can be very useful.
 
+###Director score
+
+For a given movie we have the number of awards won by its director before the release of the movie.
+
 ### Age of Cast
 
 For each actor or actress in the name.basics.tsv.gz dataset, we can find their birthYear. This can be used to compute the median for every movie considering the age of the cast by the time the movie was released. We can see if actors being young or old can impact whether a movie would win an award or not.
