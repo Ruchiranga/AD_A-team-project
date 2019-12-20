@@ -4,10 +4,10 @@ Contribution of the members of the group (roughly) :
 
 Analysis of the features
 
-Laurent : Geographical reach, budget
-Ruchiranga : Gender, IsAdult
-Souhail : Director score, releaseDate
-Stanislas : Age, Runtime, Genres
+* Laurent : Geographical reach, budget
+* Ruchiranga : Gender, IsAdult
+* Souhail : Director score, releaseDate
+* Stanislas : Age, Runtime, Genres
 
 The scraping code was done by Ruchiranga
 
