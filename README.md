@@ -6,7 +6,7 @@ Analysis of the features
 
 * Laurent : Geographical reach, budget
 * Ruchiranga : Gender, IsAdult
-* Souhail : Director score, releaseDate
+* Souhail : Director score, Month of Release
 * Stanislas : Age, Runtime, Genres
 
 The scraping code was done by Ruchiranga
