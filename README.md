@@ -87,11 +87,6 @@ Each movie has a list of genres, there is 25 of them and they can be very useful
 
 For each actor or actress in the name.basics.tsv.gz dataset, we can find their birthYear. This can be used to compute the median for every movie considering the age of the cast by the time the movie was released. We can see if actors being young or old can impact whether a movie would win an award or not.
 
-### Release Date
-
-The year and the month of the release date 
-
-
 ## Dataset
 We use the datasets provided by IMDB: [https://datasets.imdbws.com/](https://datasets.imdbws.com/). Schemas and descriptions of the features of the datasets used are as follows.
 
