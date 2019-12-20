@@ -19,7 +19,7 @@ Nowadays, movies have become an integral part of entertainment in everyone’s l
 The goal of the project is to analyze the factors that contribute to the success of a movie through time. We intend to look into aspects including but not limited to the cast, the movie budget, writers and directors, time of first screening, genre and the IMDB rating of movies. The analysis can give us insights on the evolution of the interest of people towards movies with time. We will use datasets provided by IMDB and we will also use web scraping to obtain additional information required from imdb.com.
 
 ## Research Questions
-We intend to address the main research question "What are the factors that make a movie award winning?". We analyzed the following aspects.
+We intend to address the main research question "What are the factors that make a movie successful?". We analyzed the following aspects.
 
 ## Success metrics
 
